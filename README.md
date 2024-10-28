@@ -21,8 +21,8 @@ La interacción entre agentes sigue un flujo estructurado donde "EntradaSalida" 
 
 ### 3. Mecanismos de Comunicación
 
-    Comunicación Síncrona Directa: La comunicación entre el agente EntradaSalida y cada agente de operación es directa y sincrónica. EntradaSalida llama a un agente específico y espera el resultado antes de proceder. Este método asegura que cada operación se complete en el orden correcto y respete la precedencia de operadores.
-    Almacenamiento Temporal de Resultados: Los resultados de las operaciones intermedias se almacenan temporalmente en una lista en el modelo CalculatorModel, lo cual permite gestionar el flujo de datos y reducir la complejidad de comunicación.
+Comunicación Síncrona Directa: La comunicación entre el agente EntradaSalida y cada agente de operación es directa y sincrónica. EntradaSalida llama a un agente específico y espera el resultado antes de proceder. Este método asegura que cada operación se complete en el orden correcto y respete la precedencia de operadores. <br> <br>
+    Almacenamiento Temporal de Resultados: Los resultados de las operaciones intermedias se almacenan temporalmente en una lista en el modelo CalculatorModel, lo cual permite gestionar el flujo de datos y reducir la complejidad de comunicación. <br> <br>
     Control de Precedencia: EntradaSalida se encarga de la precedencia usando un esquema de pila de operadores y valores. Este mecanismo organiza las operaciones de manera que la multiplicación, división y potencia se resuelvan antes de las sumas y restas.
 
 ### Ejemplo de Comunicación en la Evaluación de la Expresión
