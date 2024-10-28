@@ -31,13 +31,12 @@ Tomemos como ejemplo la expresión 2 + 3 * 4 - 5 ^ 2. La interacción ocurre de 
 
 EntradaSalida analiza la expresión y determina que ^ (potencia) y * (multiplicación) tienen precedencia sobre + y -.<br> <br>
     Primera interacción:
-        EntradaSalida envía 5 y 2 al AgentePotencia, que devuelve 25.
+        "EntradaSalida" envía 5 y 2 al "AgentePotencia", que devuelve 25.
         Este resultado reemplaza 5 ^ 2 en la expresión.<br> <br>
     Segunda interacción:
-        EntradaSalida envía 3 y 4 al AgenteMultiplicacion, que devuelve 12.
+        "EntradaSalida" envía 3 y 4 al "AgenteMultiplicacion", que devuelve 12.
         Este resultado reemplaza 3 * 4 en la expresión.<br> <br>
     Interacción final:
-        EntradaSalida procesa el resto de la expresión (2 + 12 - 25) mediante el AgenteSuma y el AgenteResta, en orden.<br> <br>
+        "EntradaSalida" procesa el resto de la expresión (2 + 12 - 25) mediante el "AgenteSuma" y el "AgenteResta", en orden.<br> <br>
 
-Este enfoque asegura que cada agente de operación solo se activa cuando su turno y precedencia han sido asegurados, garantizando la correcta evaluación de la expresión.
 ## Punto 3
