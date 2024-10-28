@@ -14,9 +14,9 @@ Modelo de Calculadora (CalculatorModel): Es el núcleo del sistema, diseñado pa
 
 ### 2. Interacción entre Agentes
 
-La interacción entre agentes sigue un flujo estructurado donde "EntradaSalida" funciona como el agente principal, coordinando el flujo de datos entre los agentes. Este flujo se divide en:
-        Análisis de la Expresión: "EntradaSalida" toma la expresión y la descompone en tokens que representan números y operadores.
-        Gestión de Precedencia: Siguiendo las reglas de precedencia, "EntradaSalida" organiza los tokens en el orden adecuado para resolver las operaciones de mayor precedencia antes.
+La interacción entre agentes sigue un flujo estructurado donde "EntradaSalida" funciona como el agente principal, coordinando el flujo de datos entre los agentes. Este flujo se divide en: <br> <br>
+        Análisis de la Expresión: "EntradaSalida" toma la expresión y la descompone en tokens que representan números y operadores. <br> <br>
+        Gestión de Precedencia: Siguiendo las reglas de precedencia, "EntradaSalida" organiza los tokens en el orden adecuado para resolver las operaciones de mayor precedencia antes. <br> <br>
         Ejecución de Operaciones: "EntradaSalida" llama a los agentes de operación en secuencia. Para cada operación, envía dos numeros al agente respectivo, espera el resultado y luego actualiza la lista de valores pendientes para la siguiente operacion. Este proceso continúa hasta que solo queda un valor, que es el resultado final.
 
 ### 3. Mecanismos de Comunicación
