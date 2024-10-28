@@ -1,4 +1,5 @@
-# Parcial 2doCorte Paradigmas
+# Parcial 2doCorte Paradigmas de programación <br> <br>
+
 ## Punto 1
 ## Punto 2
 ### Descripción del Funcionamiento de la Comunicación entre Agentes
