@@ -8,15 +8,15 @@ Cada agente de operación (suma, resta, multiplicación, división, potencia) es
 ### Informe
 ### Arquitectura del Sistema
 
-    Modelo de Calculadora (CalculatorModel): Es el núcleo del sistema, diseñado para manejar y evaluar expresiones matemáticas. El CalculatorModel se compone del agente coordinador EntradaSalida, encargado de recibir la expresión del usuario y de gestionar la secuencia de operaciones. Utiliza un scheduler de Mesa para organizar y ejecutar los agentes de operación.
-    Agentes de Operación: Cada operación matemática es gestionada por un agente especializado. Los agentes AgenteSuma, AgenteResta, AgenteMultiplicacion, AgenteDivision, y AgentePotencia se implementan como instancias autónomas de la clase AgenteOperacion. Su única responsabilidad es recibir dos valores y devolver el resultado de la operación correspondiente.
+Modelo de Calculadora (CalculatorModel): Es el núcleo del sistema, diseñado para manejar las expresiones matemáticas. "CalculatorModel" se compone del agente coordinador "EntradaSalida", encargado de recibir la expresión matematica y gestionar la secuencia de operaciones. Utiliza un "scheduler" de Mesa para organizar y ejecutar los agentes de operación. <br>
+    Agentes de Operación: Cada operación matemática es manejada por un agente eespecifico. Los agentes "AgenteSuma", "AgenteResta", "AgenteMultiplicacion", "AgenteDivision", y "AgentePotencia" se implementan como instancias de la clase "AgenteOperacion". Su única responsabilidad es recibir dos valores y devolver el resultado de la operación correspondiente.
 
 ### 2. Interacción entre Agentes
 
-    La interacción entre agentes sigue un flujo estructurado donde EntradaSalida funciona como el agente principal, coordinando el flujo de datos entre los agentes de operación. Este flujo se divide en tres fases:
-        Análisis de la Expresión: EntradaSalida toma la expresión y la descompone en tokens que representan números y operadores.
-        Gestión de Precedencia: Siguiendo las reglas de precedencia, EntradaSalida organiza los tokens en el orden adecuado para resolver las operaciones de mayor precedencia antes.
-        Ejecución de Operaciones: EntradaSalida invoca a los agentes de operación en secuencia. Para cada operación, envía dos operandos al agente respectivo, espera el resultado y luego actualiza la lista de valores pendientes para la operación siguiente. Este proceso continúa hasta que solo queda un valor, que es el resultado final.
+La interacción entre agentes sigue un flujo estructurado donde "EntradaSalida" funciona como el agente principal, coordinando el flujo de datos entre los agentes. Este flujo se divide en:
+        Análisis de la Expresión: "EntradaSalida" toma la expresión y la descompone en tokens que representan números y operadores.
+        Gestión de Precedencia: Siguiendo las reglas de precedencia, "EntradaSalida" organiza los tokens en el orden adecuado para resolver las operaciones de mayor precedencia antes.
+        Ejecución de Operaciones: "EntradaSalida" llama a los agentes de operación en secuencia. Para cada operación, envía dos numeros al agente respectivo, espera el resultado y luego actualiza la lista de valores pendientes para la siguiente operacion. Este proceso continúa hasta que solo queda un valor, que es el resultado final.
 
 ### 3. Mecanismos de Comunicación
 
