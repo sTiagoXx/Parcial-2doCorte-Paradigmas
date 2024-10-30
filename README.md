@@ -41,3 +41,10 @@ EntradaSalida analiza la expresión y determina que ^ (potencia) y * (multiplica
         "EntradaSalida" procesa el resto de la expresión (2 + 12 - 25) mediante el "AgenteSuma" y el "AgenteResta", en orden.<br> <br>
 
 ## Punto 3
+
+###1. Encapsulamiento
+
+El encapsulamiento se refiere a la práctica de ocultar el estado interno de un objeto y proporcionar métodos públicos para acceder y modificar ese estado.
+
+Implementación en la Calculadora Científica:
+Atributos Privados: La clase CalculadoraCientifica tiene un atributo privado memoria, que almacena un valor en memoria. Este atributo no se puede acceder directamente desde fuera de la clase, lo que protege su integridad.
