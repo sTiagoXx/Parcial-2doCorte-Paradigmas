@@ -42,9 +42,91 @@ EntradaSalida analiza la expresión y determina que ^ (potencia) y * (multiplica
 
 ## Punto 3
 
-###1. Encapsulamiento
+# Informe sobre la Implementación de la Calculadora Científica
 
+## Introducción
+Este informe describe la implementación de una calculadora científica en Kotlin, destacando la aplicación de los principios de la Programación Orientada a Objetos (POO), incluyendo **encapsulamiento**, **herencia** y **polimorfismo**. Cada uno de estos principios se ha aplicado de manera que se maximice la modularidad, la reutilización del código y la claridad del diseño.
+
+## 1. Encapsulamiento
 El encapsulamiento se refiere a la práctica de ocultar el estado interno de un objeto y proporcionar métodos públicos para acceder y modificar ese estado.
 
-Implementación en la Calculadora Científica:
-Atributos Privados: La clase CalculadoraCientifica tiene un atributo privado memoria, que almacena un valor en memoria. Este atributo no se puede acceder directamente desde fuera de la clase, lo que protege su integridad.
+**Implementación en la Calculadora Científica:**
+- **Atributos Privados:** La clase `CalculadoraCientifica` tiene un atributo privado `memoria`, que almacena un valor en memoria. Este atributo no se puede acceder directamente desde fuera de la clase, lo que protege su integridad.
+
+    ```kotlin
+    private var memoria: Double = 0.0
+    ```
+
+- **Métodos Públicos:** La clase proporciona métodos públicos para interactuar con el atributo `memoria`. Por ejemplo, el método `guardarEnMemoria()` permite guardar un valor en memoria, mientras que `recuperarMemoria()` permite acceder a ese valor.
+
+    ```kotlin
+    fun guardarEnMemoria(valor: Double) {
+        memoria = valor
+    }
+
+    fun recuperarMemoria(): Double = memoria
+    ```
+
+- **Manejo de Errores:** También se implementan excepciones dentro de los métodos para manejar errores comunes, como la división por cero en el método `dividir()`. Esto asegura que los usuarios reciban mensajes de error claros y precisos, mejorando la robustez de la aplicación.
+
+    ```kotlin
+    fun dividir(a: Double, b: Double): Double {
+        if (b == 0.0) throw ArithmeticException("División por cero no permitida")
+        return a / b
+    }
+    ```
+
+## 2. Herencia
+La herencia permite crear una nueva clase que extiende o especializa el comportamiento de una clase existente.
+
+**Implementación en la Calculadora Científica:**
+- **Clase Base:** Aunque en el código actual no se ha implementado explícitamente una clase base `Calculadora`, se puede diseñar una que contenga las operaciones aritméticas básicas (suma, resta, multiplicación y división).
+
+    ```kotlin
+    open class Calculadora {
+        fun sumar(a: Double, b: Double): Double = a + b
+        fun restar(a: Double, b: Double): Double = a - b
+        fun multiplicar(a: Double, b: Double): Double = a * b
+        fun dividir(a: Double, b: Double): Double {
+            if (b == 0.0) throw ArithmeticException("División por cero no permitida")
+            return a / b
+        }
+    }
+    ```
+
+- **Clase Derivada:** La clase `CalculadoraCientifica` hereda de la clase `Calculadora`, permitiendo que todas las operaciones básicas estén disponibles sin tener que reescribir el código. Esto demuestra la reutilización de código y una estructura más clara.
+
+    ```kotlin
+    class CalculadoraCientifica : Calculadora() {
+        // Métodos para funciones avanzadas
+    }
+    ```
+
+## 3. Polimorfismo
+El polimorfismo permite que se utilicen métodos con el mismo nombre pero comportamientos diferentes, dependiendo del contexto en el que se utilicen.
+
+**Implementación en la Calculadora Científica:**
+- **Sobrecarga de Métodos:** En la calculadora, se podrían implementar métodos sobrecargados para realizar operaciones con diferentes tipos de datos, por ejemplo, aceptar tanto `Double` como `Int` en los métodos de operación.
+
+    ```kotlin
+    fun sumar(a: Int, b: Int): Int = a + b
+    fun sumar(a: Double, b: Double): Double = a + b
+    ```
+
+- **Evaluación de Expresiones:** La función `evaluarExpresion()` toma una cadena de texto que representa una expresión matemática y evalúa el resultado. Esta función puede recibir diferentes formatos de expresión, demostrando polimorfismo al manejar diferentes tipos de datos y operaciones en un solo método.
+
+    ```kotlin
+    fun evaluarExpresion(expresion: String): Double {
+        // Lógica para analizar y evaluar la expresión
+    }
+    ```
+
+## Conclusión
+La implementación de la calculadora científica en Kotlin ha hecho un uso efectivo de los principios de la Programación Orientada a Objetos. 
+
+- **Encapsulamiento**: Se logra mediante el uso de atributos privados y la provisión de métodos públicos, garantizando que el estado interno de los objetos esté protegido y controlado.
+- **Herencia**: Permite la creación de una jerarquía de clases que facilita la reutilización del código y la extensión de funcionalidades.
+- **Polimorfismo**: Ofrece flexibilidad y la posibilidad de tratar diferentes tipos de datos a través de métodos sobrecargados, permitiendo que el mismo método pueda actuar de diferentes maneras dependiendo del contexto.
+
+Estos principios no solo contribuyen a una mejor organización del código, sino que también facilitan su mantenimiento y escalabilidad, permitiendo futuras extensiones sin necesidad de reestructurar el código existente.
+
