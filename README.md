@@ -1,6 +1,59 @@
 # Parcial 2doCorte Paradigmas de programación <br> <br>
 
 # Punto 1
+# Informe: Implementación de un Perceptrón en NetLogo
+
+## Introducción
+
+Este proyecto implementa un perceptrón en NetLogo para realizar una tarea de clasificación binaria simple. Un perceptrón es un tipo de red neuronal artificial que puede aprender a clasificar patrones linealmente separables. Esta implementación entrena un perceptrón usando un conjunto de datos de entrada y ajusta los pesos de las conexiones a través del algoritmo de aprendizaje supervisado.
+
+## Descripción del Modelo
+
+El perceptrón está compuesto por dos tipos de nodos:
+- **Nodos de Entrada**: Los nodos de entrada generan activaciones que se propagan a través de los enlaces hacia el nodo de salida.
+- **Nodo de Salida**: Recibe la suma ponderada de las entradas y, en función de un umbral, activa una salida (1 o -1) que representa la clase asignada.
+
+Cada conexión entre nodos de entrada y el nodo de salida tiene un peso asociado que se ajusta durante el proceso de entrenamiento para minimizar el error en las clasificaciones.
+
+### Variables Principales
+- **tasa-aprendizaje**: Factor que determina la magnitud del ajuste de los pesos en cada iteración de entrenamiento.
+- **objetivo**: Valor que el perceptrón intenta aprender a predecir (1 o -1).
+  
+### Propiedades de las Tortugas
+- **activacion**: Valor de activación del nodo de entrada o de salida.
+
+### Propiedades de los Enlaces
+- **peso**: Peso asignado a cada conexión entre nodos, que se ajusta durante el entrenamiento.
+
+## Estructura del Código
+
+### 1. Configuración Inicial (`setup`)
+La función `setup` inicializa el modelo, creando dos nodos de entrada y un nodo de salida, con enlaces entre ellos. Los pesos de los enlaces se asignan aleatoriamente en un rango de valores bajos (cercanos a cero) para iniciar el proceso de aprendizaje sin sesgos significativos.
+
+### 2. Entrenamiento del Perceptrón (`entrenar`)
+El proceso de entrenamiento ajusta los pesos mediante el siguiente flujo:
+1. Se asignan valores aleatorios a los nodos de entrada.
+2. Se calcula la activación del nodo de salida mediante la suma ponderada de las activaciones de los nodos de entrada.
+3. Si la activación del nodo de salida es incorrecta (diferente de `objetivo`), los pesos se ajustan en proporción al error y a la tasa de aprendizaje, de manera que en las próximas iteraciones se reduzca el error de predicción.
+
+### 3. Función de Activación (`computar-activacion`)
+La función de activación aplica un umbral en el nodo de salida: si la suma ponderada de las entradas es mayor que cero, la activación es `1`; de lo contrario, es `-1`.
+
+### 4. Ajuste de Pesos (`actualizar-pesos`)
+Cada peso se ajusta según la diferencia entre la salida esperada (`objetivo`) y la activación del nodo de salida. Este ajuste permite que el modelo mejore sus predicciones con cada época.
+
+### 5. Prueba del Modelo (`probar`)
+La función `probar` permite observar cómo el perceptrón clasifica nuevas activaciones de los nodos de entrada tras el proceso de entrenamiento. Esto permite evaluar si el modelo ha aprendido correctamente el patrón.
+
+## Resultados
+
+### Entrenamiento
+Tras entrenar el modelo por un número fijo de épocas (por ejemplo, 100), los pesos se ajustan para reducir el error en las predicciones. El perceptrón aprende a asignar correctamente activaciones de entrada a las clases deseadas (1 o -1) si el conjunto de datos es linealmente separable. 
+
+### Pruebas
+Al realizar pruebas con nuevas activaciones de entrada, el perceptrón clasifica correctamente la mayoría de las veces, indicando que el modelo ha aprendido el patrón establecido en el entrenamiento. Sin embargo, dado que el perceptrón solo puede resolver problemas linealmente separables, su precisión se reduce si se le presentan datos que no cumplen con esta característica.
+
+
 # Punto 2
 ## Descripción del Funcionamiento de la Comunicación entre Agentes
 En este sistema de calculadora, la comunicación entre agentes es manejada principalmente a través del agente `EntradaSalida` en el modelo. Este agente recibe la expresión matemática en una cadena de texto y luego la divide en tokens (números y operadores). <br> <br>
