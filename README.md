@@ -1,7 +1,7 @@
 # Parcial 2doCorte Paradigmas de programación <br> <br>
 
 # Punto 1
-# Informe: Implementación de un Perceptrón en NetLogo
+## Informe: Implementación de un Perceptrón en NetLogo
 
 ## Descripción del Modelo
 
