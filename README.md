@@ -1,5 +1,4 @@
-### Parcial 2doCorte Paradigmas de programación <br> <br>
-### Santiago Ruiz Rangel
+### Parcial 2doCorte Paradigmas de programación - Santiago Ruiz Rangel
 # Punto 1
 ## Informe: Implementación de un Perceptrón en NetLogo
 
