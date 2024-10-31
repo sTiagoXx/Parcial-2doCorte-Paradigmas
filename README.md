@@ -1,7 +1,5 @@
 ### Parcial 2doCorte Paradigmas de programación - Santiago Ruiz Rangel
 # Punto 1
-## Informe: Implementación de un Perceptrón en NetLogo
-
 ## Descripción del Modelo
 
 El perceptrón está compuesto por dos tipos de nodos:
