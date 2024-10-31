@@ -88,9 +88,6 @@ Tomemos como ejemplo la expresión `2 + 3 * 4 - 5 ^ 2`. La interacción ocurre d
 
 ## Informe sobre la Implementación de la Calculadora Científica
 
-## Introducción
-Este informe describe la implementación de una calculadora científica en Kotlin, destacando la aplicación de los principios de la Programación Orientada a Objetos (POO), incluyendo **encapsulamiento**, **herencia** y **polimorfismo**. Cada uno de estos principios se ha aplicado de manera que se maximice la modularidad, la reutilización del código y la claridad del diseño.
-
 ## 1. Encapsulamiento
 El encapsulamiento se refiere a la práctica de ocultar el estado interno de un objeto y proporcionar métodos públicos para acceder y modificar ese estado.
 
